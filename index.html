@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoodTimer - Reward Timer for Kids</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>⭐ GoodTimer</h1>
+            <p class="tagline">Earn time, track rewards, be awesome!</p>
+        </header>
+
+        <main>
+            <!-- Points Display -->
+            <div class="points-display">
+                <div class="points-circle">
+                    <span class="points-value" id="total-points">0</span>
+                    <span class="points-label">Stars</span>
+                </div>
+                <div class="streak-info">
+                    <span>🔥 <span id="streak">0</span> day streak</span>
+                </div>
+            </div>
+
+            <!-- Timer Section -->
+            <div class="timer-section">
+                <div class="timer-display" id="timer-display">00:00</div>
+                <div class="timer-label" id="timer-label">Ready to start!</div>
+                
+                <div class="timer-controls">
+                    <button class="timer-btn" data-minutes="5">5 min</button>
+                    <button class="timer-btn" data-minutes="10">10 min</button>
+                    <button class="timer-btn" data-minutes="15">15 min</button>
+                    <button class="timer-btn" data-minutes="20">20 min</button>
+                    <button class="timer-btn" data-minutes="30">30 min</button>
+                </div>
+
+                <div class="action-buttons">
+                    <button id="start-btn" class="primary-btn">▶️ Start Timer</button>
+                    <button id="pause-btn" class="secondary-btn" disabled>⏸️ Pause</button>
+                    <button id="reset-btn" class="reset-btn">🔄 Reset</button>
+                </div>
+            </div>
+
+            <!-- Activity Tracker -->
+            <div class="activity-section">
+                <h2>📋 Today's Activities</h2>
+                <div class="activity-list" id="activity-list">
+                    <div class="activity-item">
+                        <span class="activity-icon">📚</span>
+                        <span class="activity-name">Reading</span>
+                        <span class="activity-time" data-activity="reading">0 min</span>
+                        <button class="quick-add" data-activity="reading" data-minutes="10">+10</button>
+                    </div>
+                    <div class="activity-item">
+                        <span class="activity-icon">🏃</span>
+                        <span class="activity-name">Exercise</span>
+                        <span class="activity-time" data-activity="exercise">0 min</span>
+                        <button class="quick-add" data-activity="exercise" data-minutes="10">+10</button>
+                    </div>
+                    <div class="activity-item">
+                        <span class="activity-icon">🧹</span>
+                        <span class="activity-name">Chores</span>
+                        <span class="activity-time" data-activity="chores">0 min</span>
+                        <button class="quick-add" data-activity="chores" data-minutes="10">+10</button>
+                    </div>
+                    <div class="activity-item">
+                        <span class="activity-icon">🎹</span>
+                        <span class="activity-name">Practice</span>
+                        <span class="activity-time" data-activity="practice">0 min</span>
+                        <button class="quick-add" data-activity="practice" data-minutes="10">+10</button>
+                    </div>
+                    <div class="activity-item">
+                        <span class="activity-icon">📝</span>
+                        <span class="activity-name">Homework</span>
+                        <span class="activity-time" data-activity="homework">0 min</span>
+                        <button class="quick-add" data-activity="homework" data-minutes="10">+10</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Rewards Section -->
+            <div class="rewards-section">
+                <h2>🎁 Rewards Shop</h2>
+                <div class="rewards-grid" id="rewards-grid">
+                    <div class="reward-card" data-cost="10">
+                        <span class="reward-icon">📺</span>
+                        <span class="reward-name">TV Time (30 min)</span>
+                        <span class="reward-cost">⭐ 10</span>
+                        <button class="redeem-btn">Redeem</button>
+                    </div>
+                    <div class="reward-card" data-cost="15">
+                        <span class="reward-icon">🎮</span>
+                        <span class="reward-name">Video Games (30 min)</span>
+                        <span class="reward-cost">⭐ 15</span>
+                        <button class="redeem-btn">Redeem</button>
+                    </div>
+                    <div class="reward-card" data-cost="20">
+                        <span class="reward-icon">🍦</span>
+                        <span class="reward-name">Ice Cream Treat</span>
+                        <span class="reward-cost">⭐ 20</span>
+                        <button class="redeem-btn">Redeem</button>
+                    </div>
+                    <div class="reward-card" data-cost="30">
+                        <span class="reward-icon">🎬</span>
+                        <span class="reward-name">Movie Night</span>
+                        <span class="reward-cost">⭐ 30</span>
+                        <button class="redeem-btn">Redeem</button>
+                    </div>
+                    <div class="reward-card" data-cost="50">
+                        <span class="reward-icon">🎢</span>
+                        <span class="reward-name">Fun Outing</span>
+                        <span class="reward-cost">⭐ 50</span>
+                        <button class="redeem-btn">Redeem</button>
+                    </div>
+                    <div class="reward-card" data-cost="100">
+                        <span class="reward-icon">🎁</span>
+                        <span class="reward-name">Special Surprise</span>
+                        <span class="reward-cost">⭐ 100</span>
+                        <button class="redeem-btn">Redeem</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- History -->
+            <div class="history-section">
+                <h2>📊 History</h2>
+                <div id="history-list" class="history-list"></div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Keep up the great work! 🌟</p>
+        </footer>
+    </div>
+
+    <!-- Celebration Modal -->
+    <div id="celebration-modal" class="modal">
+        <div class="modal-content celebration">
+            <h2>🎉 Amazing Job! 🎉</h2>
+            <p id="celebration-message"></p>
+            <div class="confetti" id="confetti"></div>
+            <button id="close-celebration" class="primary-btn">Awesome!</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
