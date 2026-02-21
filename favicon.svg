@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="starGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffd700"/>
+      <stop offset="100%" style="stop-color:#ffb347"/>
+    </linearGradient>
+    <linearGradient id="timerBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#4fc3f7"/>
+      <stop offset="100%" style="stop-color:#29b6f6"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background circle -->
+  <circle cx="32" cy="32" r="30" fill="url(#timerBg)"/>
+  <circle cx="32" cy="32" r="26" fill="white"/>
+  
+  <!-- Timer marks -->
+  <line x1="32" y1="8" x2="32" y2="12" stroke="#333" stroke-width="2" stroke-linecap="round"/>
+  <line x1="32" y1="52" x2="32" y2="56" stroke="#333" stroke-width="2" stroke-linecap="round"/>
+  <line x1="8" y1="32" x2="12" y2="32" stroke="#333" stroke-width="2" stroke-linecap="round"/>
+  <line x1="52" y1="32" x2="56" y2="32" stroke="#333" stroke-width="2" stroke-linecap="round"/>
+  
+  <!-- Clock hands -->
+  <line x1="32" y1="32" x2="32" y2="18" stroke="#333" stroke-width="3" stroke-linecap="round"/>
+  <line x1="32" y1="32" x2="42" y2="32" stroke="#4caf50" stroke-width="2.5" stroke-linecap="round"/>
+  
+  <!-- Center dot -->
+  <circle cx="32" cy="32" r="3" fill="#333"/>
+  
+  <!-- Star badge -->
+  <g transform="translate(42, 8)">
+    <polygon points="10,0 12.5,7.5 20,7.5 14,12 16.5,20 10,15 3.5,20 6,12 0,7.5 7.5,7.5" fill="url(#starGold)" stroke="#e6a200" stroke-width="1"/>
+  </g>
+</svg>
